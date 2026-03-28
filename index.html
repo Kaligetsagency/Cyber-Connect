@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Drop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">NEON DROP</h1>
+        
+        <div id="menu-ui">
+            <button class="btn ai-btn" onclick="startAIGame()">Play Hard AI</button>
+            <div class="divider">OR MULTIPLAYER</div>
+            <button class="btn host-btn" onclick="hostGame()">Host Game</button>
+            <div id="host-info" class="hidden">
+                <p>Your P2P Code:</p>
+                <code id="peer-id-display">Generating...</code>
+                <p class="small">Send this code to player 2.</p>
+            </div>
+            <div class="join-section">
+                <input type="text" id="join-id" placeholder="Paste Code Here">
+                <button class="btn join-btn" onclick="joinGame()">Join</button>
+            </div>
+        </div>
+
+        <div id="game-ui" class="hidden">
+            <div class="status-bar">
+                <div class="p1-indicator">P1 (GREEN)</div>
+                <div id="turn-display">Waiting...</div>
+                <div class="p2-indicator">P2 (PURPLE)</div>
+            </div>
+            <div id="board"></div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2 id="result-title">MATCH OVER</h2>
+            <p id="result-message"></p>
+            <button class="btn ai-btn" onclick="resetToMenu()">Return to Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
